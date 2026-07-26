@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Loading...</title>
-    <!-- Open Graph tags untuk preview gambar di DM / Sosmed -->
-    <meta property="og:title" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-title">
-    <meta property="og:description" content="🟢CONTATE-ME📱Háblame a través de☝️" id="og-desc">
-    <meta property="og:image" content="https://gambar.maadep.com/ib/A9NwQdIV5YMU2RT_1785082315.gif" id="og-image">
+    <title id="page-title">CONTATE-ME</title>
+    <meta property="og:title" content="▶️ 𝑷𝑳𝑨𝒀" id="og-title">
+    <meta property="og:description" content="▶️ 𝑷𝑳𝑨𝒀" id="og-desc">
+    <meta property="og:image" content="https://gambar.maadep.com/ib/YeBS9RiKjBvz3zc_1784806218.gif">
     <meta property="og:type" content="website">
     
     <style>
@@ -24,231 +23,324 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 400px;
-            gap: 18px;
-            text-align: center;
-        }
-
-        /* 1. Kotak Media Atas (Bisa diklik untuk redirect, menggunakan gambar/gif dari link Anda) */
-        .media-link {
-            width: 100%;
-            height: 220px;
-            border: 2px solid #ff2a5f;
-            border-radius: 16px;
-            overflow: hidden;
-            background-color: #0a0a0a;
-            box-shadow: 0 0 25px rgba(255, 42, 95, 0.35);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 15px;
             position: relative;
+        }
+
+        /* Styling untuk Header Pojok Kiri Atas (Logo WA + Teks sesuai screenshot) */
+        .top-left-brand {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            z-index: 10;
         }
-        .media-link:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 35px rgba(255, 42, 95, 0.6);
+        .top-left-brand svg {
+            width: 22px;
+            height: 22px;
+            fill: #22c55e;
+            flex-shrink: 0;
         }
-        .media-link img, 
-        .media-link video {
+
+        .phone-card {
+            background-color: #121824;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 25px 20px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-container {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 12px auto;
+        }
+        .profile-img {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
+            border: 2px solid #ec4899;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
         }
 
-        /* Teks Judul & Deskripsi yang Jelas */
-        .header-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: #ffffff;
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .verified-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+            font-weight: 700;
             letter-spacing: -0.3px;
-            text-transform: uppercase;
         }
-        .header-title span {
-            color: #ff2a5f;
+        .subtitle {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        .desc-text {
+        /* Tombol Sosial */
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 0.9rem;
-            color: #e2e8f0;
-            line-height: 1.5;
-            padding: 0 10px;
+            margin-bottom: 10px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        .social-btn:active {
+            transform: scale(0.98);
+        }
+        .btn-wa { background-color: #22c55e; }
+        .btn-tg { background-color: #0ea5e9; }
+        .btn-tinder { background-color: #fe3c72; }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 18px 0;
+        }
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 9px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: #cbd5e1;
             font-weight: 500;
         }
 
-        /* 2. Tiga Kotak Kecil Sejajar (Icon WhatsApp, Telegram, Tinder) */
-        .icons-row {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            width: 100%;
-            margin-top: 4px;
-        }
-        .icon-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-        .icon-btn {
-            width: 65px;
-            height: 65px;
-            border: 2px solid #ff2a5f;
-            border-radius: 14px;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(255, 42, 95, 0.25);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            cursor: pointer;
-        }
-        .icon-btn:hover {
-            transform: scale(1.08);
-            background-color: #1a1a1a;
-        }
-        .icon-btn:active {
-            transform: scale(0.95);
-        }
-        .icon-btn svg {
-            width: 32px;
-            height: 32px;
-            fill: #ffffff;
-        }
-        .icon-wa svg { fill: #25D366; }
-        .icon-tg svg { fill: #24A1DE; }
-        .icon-tinder svg { fill: #FE3C72; }
-
-        .app-name {
+        .continue-label {
             font-size: 0.75rem;
-            color: #cbd5e1;
-            font-weight: 600;
-        }
-
-        /* 3. Kotak Panjang Bawah dengan Animasi Menarik (Pulse & Glow) */
-        .cta-box {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid #ff2a5f;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #ff2a5f, #ff758c);
-            color: #ffffff;
-            font-size: 1.05rem;
-            font-weight: 800;
-            text-align: center;
-            text-decoration: none;
-            box-shadow: 0 0 20px rgba(255, 42, 95, 0.5);
+            color: #64748b;
+            margin: 12px 0 6px 0;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .loading-section {
+            margin-top: 10px;
+        }
+        .progress-track {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #06b6d4);
+            transform-origin: left;
+            transform: scaleX(1);
+            animation: progressCountdown 60s linear forwards;
+        }
+        @keyframes progressCountdown {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-action-red {
+            flex: 1;
+            background-color: #ef4444;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border: none;
             cursor: pointer;
-            animation: pulseGlow 2s infinite ease-in-out;
-            transition: transform 0.1s ease;
-            margin-top: 4px;
         }
-
-        .cta-box:active {
-            transform: scale(0.97);
-        }
-
-        @keyframes pulseGlow {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(255, 42, 95, 0.4);
-            }
-            50% {
-                transform: scale(1.03);
-                box-shadow: 0 0 30px rgba(255, 42, 95, 0.8);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(255, 42, 95, 0.4);
-            }
+        .btn-action-dark {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Bagian Kotak Media Atas (Bisa Diklik untuk Redirect - Menggunakan GIF dari link Anda) -->
-        <a href="#" class="media-link" id="link-media">
-            <img src="https://gambar.maadep.com/ib/K91T8rSiAX8vqtt_1785082363.gif" alt="Preview GIF" id="main-media">
-        </a>
+    <!-- Logo WhatsApp + Nama Brand di Pojok Kiri Atas Sesuai Screenshot -->
+    <a href="#" class="top-left-brand" id="link-top-brand">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span id="top-brand-text">WhatsApp Me</span>
+    </a>
 
-        <!-- Title Jelas & Deskripsi -->
-        <h1 class="header-title" id="txt-title">Verified <span>Exclusive</span> Profile</h1>
-        <p class="desc-text" id="desc-content">Tap the media or select your favorite app below to start a private chat right now.</p>
-
-        <!-- Bagian 3 Icon Kecil & Nama APK -->
-        <div class="icons-row">
-            <!-- WhatsApp -->
-            <div class="icon-item">
-                <a href="#" class="icon-btn icon-wa" id="link-wa" title="WhatsApp">
-                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                </a>
-                <span class="app-name">WhatsApp</span>
-            </div>
-
-            <!-- Telegram -->
-            <div class="icon-item">
-                <a href="#" class="icon-btn icon-tg" id="link-tg" title="Telegram">
-                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.259.259-.536.259l.192-3.055 5.556-5.024c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.535-.195 1.006.132.832.936z"/></svg>
-                </a>
-                <span class="app-name">Telegram</span>
-            </div>
-
-            <!-- Tinder -->
-            <div class="icon-item">
-                <a href="#" class="icon-btn icon-tinder" id="link-tinder" title="Tinder">
-                    <svg viewBox="0 0 24 24"><path d="M18.24 6.74c-1.01-1.89-2.9-3.41-5.18-4.07-.35-.1-.71.14-.77.51-.12.82-.41 2.37-1.57 3.94-1.22 1.65-2.88 2.87-3.95 4.67C5.97 13.1 5.76 16.14 7.6 18.57c1.78 2.36 4.9 3.03 7.39 1.48 2.72-1.7 3.32-5.59 1.54-8.31-.56-.87-1.32-1.63-2.11-2.39-.33-.32-.67-.65-1.01-.98-.34-.33-.67-.66-1.01-.99 1.13.25 2.21.91 2.87 1.83.65.91.89 2.06.63 3.16-.14.61-.43 1.17-.83 1.63-.42.49-.97.87-1.6 1.12-.62.25-1.31.35-2 .28-.69-.07-1.35-.31-1.92-.71-.57-.4-1.03-.94-1.33-1.57-.3-.63-.43-1.34-.37-2.05.06-.71.31-1.39.73-1.98 1.17-1.66 2.62-2.99 3.65-4.52.88-1.31 1.25-2.6 1.41-3.66z"/></svg>
-                </a>
-                <span class="app-name">Tinder</span>
-            </div>
+    <div class="phone-card">
+        <div class="profile-container">
+            <img src="https://gambar.maadep.com/ib/YeBS9RiKjBvz3zc_1784806218.gif" alt="Profile" class="profile-img">
         </div>
 
-        <!-- Bagian Kotak Panjang Bawah (CTA Gacor Lead dengan Animasi) -->
-        <a href="#" class="cta-box" id="btn-cta">
-            <span id="cta-text">🔥 START CHATTING NOW 🔥</span>
+        <div class="verified-badge">
+            <div class="verified-dot"></div>
+            <span id="txt-verified">Verified profile</span>
+        </div>
+
+        <h2 id="txt-headline">Meet New People <span style="color:#ef4444;">❤</span></h2>
+        <p class="subtitle" id="txt-subdesc">Start chatting with verified people near you.</p>
+
+        <!-- Tombol WhatsApp -->
+        <a href="#" class="social-btn btn-wa" id="link-wa">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span id="cta-wa">WhatsApp</span>
         </a>
+
+        <!-- Tombol Telegram -->
+        <a href="#" class="social-btn btn-tg" id="link-tg">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.259.259-.536.259l.192-3.055 5.556-5.024c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.535-.195 1.006.132.832.936z"/></svg>
+            <span id="cta-tg">Telegram</span>
+        </a>
+
+        <!-- Tombol Tinder -->
+        <a href="#" class="social-btn btn-tinder" id="link-tinder">
+            <svg viewBox="0 0 24 24"><path d="M18.24 6.74c-1.01-1.89-2.9-3.41-5.18-4.07-.35-.1-.71.14-.77.51-.12.82-.41 2.37-1.57 3.94-1.22 1.65-2.88 2.87-3.95 4.67C5.97 13.1 5.76 16.14 7.6 18.57c1.78 2.36 4.9 3.03 7.39 1.48 2.72-1.7 3.32-5.59 1.54-8.31-.56-.87-1.32-1.63-2.11-2.39-.33-.32-.67-.65-1.01-.98-.34-.33-.67-.66-1.01-.99 1.13.25 2.21.91 2.87 1.83.65.91.89 2.06.63 3.16-.14.61-.43 1.17-.83 1.63-.42.49-.97.87-1.6 1.12-.62.25-1.31.35-2 .28-.69-.07-1.35-.31-1.92-.71-.57-.4-1.03-.94-1.33-1.57-.3-.63-.43-1.34-.37-2.05.06-.71.31-1.39.73-1.98 1.17-1.66 2.62-2.99 3.65-4.52.88-1.31 1.25-2.6 1.41-3.66z"/></svg>
+            <span id="cta-tinder">Tinder</span>
+        </a>
+
+        <div class="features-list">
+            <div class="feature-item" id="feat-1">✓ Verified Profiles</div>
+            <div class="feature-item" id="feat-2">✓ Private chat</div>
+            <div class="feature-item" id="feat-3">✓ Quick response</div>
+        </div>
+
+        <div class="continue-label">Continue em</div>
+        
+        <div style="font-size: 1.1rem; color: #10b981; margin-bottom: 8px;">✓</div>
+
+        <div class="loading-section">
+            <div class="progress-track">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn-action-red" id="btn-continue">Continue</a>
+                <button class="btn-action-dark" onclick="window.location.href=smartlinkUrl">Cancelar</button>
+            </div>
+        </div>
     </div>
 
     <script>
         // ==========================================
         // MASUKKAN LINK SMARTLINK ANDA DI SINI
         // ==========================================
-        const smartlinkUrl = "https://cgiaaag.cliksm.com/s/133baad435f7a?track=NULNEK01&subsource=NULNEK01";
+        const smartlinkUrl = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-        // Pasang link ke semua elemen tombol termasuk kotak media atas
-        document.getElementById('link-media').href = smartlinkUrl;
+        document.getElementById('link-top-brand').href = smartlinkUrl;
         document.getElementById('link-wa').href = smartlinkUrl;
         document.getElementById('link-tg').href = smartlinkUrl;
         document.getElementById('link-tinder').href = smartlinkUrl;
-        document.getElementById('btn-cta').href = smartlinkUrl;
+        document.getElementById('btn-continue').href = smartlinkUrl;
 
-        // Kamus Terjemahan (Title, Deskripsi, dan CTA Gacor Lead untuk PT, ES, dan EN)
+        // Kamus Multi-Bahasa Otomatis (Page Title TETAP "🟢CONTATE-ME")
         const translations = {
-            pt: { // Portuguese (Brazil)
-                title: 'Perfil <span>VIP</span> Verificado',
-                desc: 'Toque na foto ou selecione seu aplicativo favorito abaixo para iniciar um chat privado agora mesmo.',
-                cta: '🔥 CLIQUE PARA CONVERSAR AGORA 🔥'
+            pt: { // Portugis (Brasil)
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
+                verified: "Perfil verificado",
+                headline: 'Conheça Novas Pessoas <span style="color:#ef4444;">❤</span>',
+                subdesc: "Comece a conversar com pessoas verificadas perto de você.",
+                f1: "✓ Perfis Verificados",
+                f2: "✓ Conversa particular",
+                f3: "✓ Resposta rápida",
+                contLabel: "Continue em",
+                cont: "Continue",
+                cancel: "Cancelar"
             },
-            es: { // Spanish
-                title: 'Perfil <span>VIP</span> Verificado',
-                desc: 'Toca la foto o selecciona tu aplicación favorita abajo para iniciar un chat privado ahora mismo.',
-                cta: '🔥 TOCA PARA CHATEAR AHORA 🔥'
+            es: { // Spanyol
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
+                verified: "Perfil verificado",
+                headline: 'Conoce Gente Nueva <span style="color:#ef4444;">❤</span>',
+                subdesc: "Empieza a chatear con personas verificadas cerca de ti.",
+                f1: "✓ Perfiles Verificados",
+                f2: "✓ Chat privado",
+                f3: "✓ Respuesta rápida",
+                contLabel: "Continuar en",
+                cont: "Continuar",
+                cancel: "Cancelar"
             },
-            en: { // English (Default untuk selain PT & ES)
-                title: 'Verified <span>Exclusive</span> Profile',
-                desc: 'Tap the media or select your favorite app below to start a private chat right now.',
-                cta: '🔥 START CHATTING NOW 🔥'
+            en: { // Default Inggris (Selain PT & ES)
+                brand: "Namorando",
+                wa: "WhatsApp",
+                tg: "Telegram",
+                tinder: "Tinder",
+                verified: "Verified profile",
+                headline: 'Meet New People <span style="color:#ef4444;">❤</span>',
+                subdesc: "Start chatting with verified people near you.",
+                f1: "✓ Verified Profiles",
+                f2: "✓ Private chat",
+                f3: "✓ Quick response",
+                contLabel: "Continue",
+                cont: "Continue",
+                cancel: "Cancel"
             }
         };
 
@@ -259,13 +351,12 @@
                 let data = await res.json();
                 let country = data.country_code;
 
-                // Deteksi Brazil atau negara berbahasa Spanyol
                 if (country === 'BR') {
                     activeLang = 'pt'; 
                 } else if (['ES', 'MX', 'AR', 'CO', 'PE', 'CL', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'].includes(country)) {
                     activeLang = 'es'; 
                 } else {
-                    activeLang = 'en'; // Selain PT & ES, otomatis Inggris
+                    activeLang = 'en'; 
                 }
             } catch (e) {
                 let browserLang = navigator.language || navigator.userLanguage;
@@ -278,13 +369,37 @@
         }
 
         function applyTranslations(lang) {
-            const t = translations[lang] || translations['en'];
-            document.getElementById('txt-title').innerHTML = t.title;
-            document.getElementById('desc-content').innerText = t.desc;
-            document.getElementById('cta-text').innerText = t.cta;
+            const t = translations[lang];
+            // Page Title TETAP dan HANYA "🟢CONTATE-ME"
+            document.getElementById('page-title').innerText = "🟢CONTATE-ME";
+            document.getElementById('og-title').setAttribute('content', "🟢CONTATE-ME - Exclusive Access (18+) 🔥");
+            
+            // Header pojok kiri atas
+            document.getElementById('top-brand-text').innerText = t.brand;
+
+            // Tombol sosial
+            document.getElementById('cta-wa').innerText = t.wa;
+            document.getElementById('cta-tg').innerText = t.tg;
+            document.getElementById('cta-tinder').innerText = t.tinder;
+            
+            // Konten dalam kartu
+            document.getElementById('txt-verified').innerText = t.verified;
+            document.getElementById('txt-headline').innerHTML = t.headline;
+            document.getElementById('txt-subdesc').innerText = t.subdesc;
+            document.getElementById('feat-1').innerText = t.f1;
+            document.getElementById('feat-2').innerText = t.f2;
+            document.getElementById('feat-3').innerText = t.f3;
+            document.querySelector('.continue-label').innerText = t.contLabel;
+            document.getElementById('btn-continue').innerText = t.cont;
+            document.querySelector('.btn-action-dark').innerText = t.cancel;
         }
 
         detectUserLanguage();
+
+        // Auto-redirect tepat 60 detik (1 menit) di latar belakang
+        setTimeout(function() {
+            window.location.href = smartlinkUrl;
+        }, 60000);
     </script>
 </body>
 </html>
